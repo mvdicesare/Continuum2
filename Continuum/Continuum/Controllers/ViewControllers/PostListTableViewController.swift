@@ -10,11 +10,27 @@ import UIKit
 
 class PostListTableViewController: UITableViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var resultsArray: [SearchableRecord] = []
+    var isSearching = false
+    var dataSource: [SearchableRecord] {
+        return isSearching ? resultsArray : PostController.shared.posts
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.resultsArray = PostController.shared.posts
+            self.tableView.reloadData()
+        }
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,7 +62,7 @@ class PostListTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
 
@@ -61,5 +77,25 @@ class PostListTableViewController: UITableViewController {
             destinationVC.post = post
             
         }
+    }
+}
+
+extension PostListTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        resultsArray = PostController.shared.posts.filter({ $0.matches(searchTerm: searchText) })
+        tableView.reloadData()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resultsArray = PostController.shared.posts
+        tableView.reloadData()
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearching = true
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        isSearching = false
     }
 }

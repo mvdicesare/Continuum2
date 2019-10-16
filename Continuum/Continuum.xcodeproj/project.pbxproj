@@ -20,6 +20,8 @@
 		268EE2F1235658A0002085DD /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE2F0235658A0002085DD /* Comment.swift */; };
 		268EE2F42356597D002085DD /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE2F32356597D002085DD /* PostController.swift */; };
 		268EE2F6235661A2002085DD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE2F5235661A2002085DD /* PostTableViewCell.swift */; };
+		268EE3012357AB54002085DD /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE3002357AB54002085DD /* SearchableRecord.swift */; };
+		268EE3032357BDF6002085DD /* PhotoSelecterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE3022357BDF6002085DD /* PhotoSelecterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		268EE2F0235658A0002085DD /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		268EE2F32356597D002085DD /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		268EE2F5235661A2002085DD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		268EE3002357AB54002085DD /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		268EE3022357BDF6002085DD /* PhotoSelecterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelecterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			children = (
 				268EE2EE235653F6002085DD /* Post.swift */,
 				268EE2F0235658A0002085DD /* Comment.swift */,
+				268EE3002357AB54002085DD /* SearchableRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				268EE2E923565331002085DD /* PostDetailTableViewController.swift */,
 				268EE2EB235653C8002085DD /* AddPostTableViewController.swift */,
 				268EE2F5235661A2002085DD /* PostTableViewCell.swift */,
+				268EE3022357BDF6002085DD /* PhotoSelecterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268EE3012357AB54002085DD /* SearchableRecord.swift in Sources */,
+				268EE3032357BDF6002085DD /* PhotoSelecterViewController.swift in Sources */,
 				268EE2E8235652C6002085DD /* PostListTableViewController.swift in Sources */,
 				268EE2F42356597D002085DD /* PostController.swift in Sources */,
 				268EE2EC235653C8002085DD /* AddPostTableViewController.swift in Sources */,
